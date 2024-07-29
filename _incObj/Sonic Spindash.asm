@@ -109,11 +109,11 @@ Sonic_ChargingSpindash:			; If still charging the dash...
 
 Sonic_Spindash_ResetScr:
 		addq.l	#4,sp
-		cmpi.w	#(224/2)-16,($FFFFEED8).w	; <-- We'll change this later
+		cmpi.w	#(224/2)-16,(v_lookshift).w	; <-- We'll change this later
 		beq.s	loc_1AD8C
 		bhs.s	+
-		addq.w	#4,($FFFFEED8).w	; <-- We'll change this later
-+		subq.w	#2,($FFFFEED8).w	; <-- We'll change this later
+		addq.w	#4,(v_lookshift).w	; <-- We'll change this later
++		subq.w	#2,(v_lookshift).w	; <-- We'll change this later
 
 loc_1AD8C:
 		bsr.w	Sonic_LevelBound
