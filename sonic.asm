@@ -2198,7 +2198,7 @@ Tit_LoadText:
 		bsr.w	PalLoad_Fade
 		move.b	#bgm_Title,d0
 		bsr.w	PlaySound_Special	; play title screen music
-		move.b	#1,(f_debugmode).w ; disable debug mode
+		move.b	#0,(f_debugmode).w ; disable debug mode
 		move.w	#$178,(v_demolength).w ; run title screen for $178 frames
 		
 	if FixBugs
@@ -2906,6 +2906,7 @@ Level_LoadObj:
 		moveq	#0,d0
 		tst.b	(v_lastlamp).w	; are you starting from	a lamppost?
 		bne.s	Level_SkipClr	; if yes, branch
+		move.w	d0,(v_rings).w	; clear rings
 		move.l	d0,(v_time).w	; clear time
 		move.b	d0,(v_lifecount).w ; clear lives counter
 
