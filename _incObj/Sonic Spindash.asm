@@ -13,8 +13,8 @@ Sonic_SpinDash:
 		move.b	(v_jpadpress2).w,d0
 		andi.b	#btnB|btnC|btnA,d0
 		beq.w	return_1AC8C
-		move.b	#id_Warp1,anim(a0)
-		move.w	#bgm_Fade,d0
+		move.b	#id_Roll,anim(a0)
+		move.w	#sfx_Roll,d0
 		jsr	(PlaySound_Special).l
 		addq.l	#4,sp
 		move.b	#1,spindash_flag(a0)
@@ -99,8 +99,8 @@ Sonic_ChargingSpindash:			; If still charging the dash...
 		move.b	(v_jpadpress2).w,d0	
 		andi.b	#btnB|btnC|btnA,d0
 		beq.w	Sonic_Spindash_ResetScr
-		move.w	#(id_Warp1<<8)|(id_Walk<<0),anim(a0)
-		move.w	#bgm_Fade,d0
+		move.w	#(id_Roll<<8)|(id_Walk<<0),anim(a0)
+		move.w	#sfx_Roll,d0
 		jsr	(PlaySound_Special).l
 		addi.w	#$200,spindash_counter(a0)
 		cmpi.w	#$800,spindash_counter(a0)
