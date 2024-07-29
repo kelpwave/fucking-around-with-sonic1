@@ -2207,7 +2207,7 @@ Tit_LoadText:
 		; Bug: this only clears half of the "SONIC TEAM PRESENTS" slot.
 		; This is responsible for why the "PRESS START BUTTON" text doesn't
 		; show up, as the routine ID isn't reset.
-		clearRAM v_sonicteam,v_sonicteam+object_size/2
+		clearRAM v_sonicteam,v_sonicteam+object_size
 	endif
 
 		move.b	#id_TitleSonic,(v_titlesonic).w ; load big Sonic object
