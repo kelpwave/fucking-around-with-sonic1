@@ -2198,7 +2198,7 @@ Tit_LoadText:
 		bsr.w	PalLoad_Fade
 		move.b	#bgm_Title,d0
 		bsr.w	PlaySound_Special	; play title screen music
-		move.b	#0,(f_debugmode).w ; disable debug mode
+		move.b	#1,(f_debugmode).w ; disable debug mode
 		move.w	#$178,(v_demolength).w ; run title screen for $178 frames
 		
 	if FixBugs
